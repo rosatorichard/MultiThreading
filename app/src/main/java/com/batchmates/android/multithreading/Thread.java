@@ -4,6 +4,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.widget.TextView;
 
+import org.greenrobot.eventbus.EventBus;
+
 /**
  * Created by Android on 6/28/2017.
  */
@@ -37,6 +39,7 @@ public class Thread implements Runnable{
             handler.post(new Runnable() {
                 @Override
                 public void run() {
+                    EventBus.getDefault().post((new HelloEvent("Hello: "+i)));
                     textView.setText(String.valueOf(i));
                 }
             });
@@ -54,10 +57,5 @@ public class Thread implements Runnable{
         }
     }
 
-
-    public void runnable(int i)
-    {
-
-    }
 
 }

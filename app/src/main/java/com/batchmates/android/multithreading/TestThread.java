@@ -4,6 +4,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.widget.TextView;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.lang.*;
 
 /**
@@ -55,6 +57,9 @@ public class TestThread extends java.lang.Thread{
                     slowText.setText(String.valueOf(i));
                 }
             },2000);
+
+            EventBus.getDefault().post((new HelloEvent("Hello: "+i)));
+
         }
     }
 }
