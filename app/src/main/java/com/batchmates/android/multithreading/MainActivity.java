@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("Runnable", "testRunnable: "+"Runable");
         Log.d("rest", "testRunnable: ");
+        Log.d("rest", "testRunnable: ");
         java.lang.Thread j =new java.lang.Thread(t);
 
 
